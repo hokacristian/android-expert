@@ -20,3 +20,5 @@
 -keepclassmembers class androidx.viewbinding.** { *; }
 -dontwarn androidx.viewbinding.**
 
+-keep class com.google.android.play.** { *; }
+
