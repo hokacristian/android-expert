@@ -118,7 +118,6 @@ class HomeActivity : AppCompatActivity() {
         try {
             val activityClass = Class.forName("com.hoka.expertsubmission.favorite.FavoriteActivity")
             startActivity(Intent(this, activityClass))
-            Toast.makeText(this, "Menu Favorit", Toast.LENGTH_SHORT).show()
         } catch (e: ClassNotFoundException) {
             e.printStackTrace()
             Toast.makeText(this, "Failed to start activity", Toast.LENGTH_SHORT).show()
