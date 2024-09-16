@@ -106,7 +106,7 @@ class HomeActivity : AppCompatActivity() {
                 userRepository.logoutUser()
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
-                Toast.makeText(this, "Berhasil Logout", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Berhasil Keluar", Toast.LENGTH_SHORT).show()
                 true
             }
 
