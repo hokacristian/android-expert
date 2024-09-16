@@ -21,11 +21,13 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
                         Resource.Success(it)
                     })
                 }
+
                 is ApiResponse.Empty -> {
                     emitAll(loadFromDB().map {
                         Resource.Success(it)
                     })
                 }
+
                 is ApiResponse.Error -> {
                     onFetchFailed()
                     emit(
@@ -51,4 +53,5 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
     protected abstract suspend fun saveCallResult(data: RequestType)
 
     fun asFlow(): Flow<Resource<ResultType>> = result
+
 }

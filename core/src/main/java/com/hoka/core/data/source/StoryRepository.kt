@@ -26,8 +26,7 @@ class StoryRepository(
             }
 
             override fun shouldFetch(data: List<Story>?): Boolean =
-//                data == null || data.isEmpty()
-                true // ganti dengan true jika ingin selalu mengambil data dari internet
+                data == null || data.isEmpty()
 
             override suspend fun createCall(): Flow<ApiResponse<List<ListStoryItem>>> =
                 remoteDataSource.getAllStory()

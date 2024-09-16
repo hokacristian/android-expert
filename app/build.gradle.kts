@@ -21,7 +21,14 @@ android {
     }
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+        debug {
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -36,6 +43,15 @@ android {
         jvmTarget = "1.8"
     }
     dynamicFeatures += setOf(":favorite")
+
+    lint {
+        disable += "TypographyFractions" + "TypographyQuotes"
+        enable += "RtlHardcoded" + "RtlCompat" + "RtlEnabled"
+        checkOnly += "NewApi" + "InlinedApi"
+        quiet = true
+        abortOnError = false
+        ignoreWarnings = true
+    }
 }
 
 dependencies {
@@ -45,6 +61,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.core.ktx)
+    implementation(libs.feature.delivery.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -57,4 +75,6 @@ dependencies {
     implementation(libs.insert.koin.koin.core)
 
     implementation(libs.glide)
+
+    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.14")
 }
