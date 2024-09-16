@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Expert Submission</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="detail_title">Judul Story</string>
+    <string name="favorite_menu">Menu Favorit</string>
+    <string name="logout">Logout</string>
+    <string name="email_not_valid">Format email salah</string>
+    <string name="password_not_valid">Password tidak sesuai</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="home_title">Beranda</string>
+</resources>
