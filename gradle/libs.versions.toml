@@ -23,7 +23,6 @@ retrofit = "2.11.0"
 roomRuntime = "2.6.1"
 rxbinding = "2.0.0"
 rxjava = "2.2.19"
-coreKtxVersion = "1.10.3"
 featureDeliveryKtx = "2.1.0"
 
 [libraries]
@@ -42,7 +41,6 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }
-koin-android-viewmodel = { module = "org.koin:koin-androidx-viewmodel", version.ref = "koinAndroidViewmodel" }
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinStdlib" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }

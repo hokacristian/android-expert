@@ -50,8 +50,6 @@ class SessionManager(context: Context) {
     val isLogin: Boolean
         get() = pref.getBoolean(KEY_LOGIN, false)
 
-    fun saveToPreference(key: String, value: String) = editor.putString(key, value).commit()
-
     fun getFromPreference(key: String) = pref.getString(key, "")
 
     private val token: String?
@@ -63,7 +61,4 @@ class SessionManager(context: Context) {
         const val KEY_TOKEN = "token"
     }
 
-    fun isUserLogin(): Boolean {
-        return !token.isNullOrEmpty()
-    }
 }

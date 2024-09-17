@@ -134,11 +134,6 @@ class HomeActivity : AppCompatActivity() {
         unregisterReceiver(broadcastReceiver)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        unregisterReceiver(broadcastReceiver)
-    }
-
     private fun registerBroadcastReceiver() {
         broadcastReceiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context, intent: Intent) {
