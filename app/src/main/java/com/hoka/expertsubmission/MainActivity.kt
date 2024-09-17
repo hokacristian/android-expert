@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.util.Patterns
 import android.view.View
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.hoka.core.auth.UserRepository
 import com.hoka.expertsubmission.authentication.AuthenticationViewModel
 import com.hoka.expertsubmission.databinding.ActivityMainBinding
@@ -62,11 +59,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         invalidFieldsStream.subscribe { isValid ->
-            if (isValid) {
-                binding.btnLogin.isEnabled = true
-            } else {
-                binding.btnLogin.isEnabled = false
-            }
+            binding.btnLogin.isEnabled = isValid
         }
 
         binding.btnLogin.setOnClickListener {
@@ -75,7 +68,7 @@ class MainActivity : AppCompatActivity() {
 
         authenticationViewModel.isLoading.observe(this) { isLoading ->
             binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
-            binding.btnLogin.isEnabled = if (isLoading) false else true
+            binding.btnLogin.isEnabled = !isLoading
         }
     }
 

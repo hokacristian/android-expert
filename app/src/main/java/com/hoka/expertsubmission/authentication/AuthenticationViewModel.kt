@@ -30,7 +30,7 @@ class AuthenticationViewModel(
                 _isLoading.value = false
             } catch (e: Exception) {
                 _loginResult.value = null
-                Log.e(TAG, "login: ${e.message}", )
+                Log.e(TAG, "login: ${e.message}" )
                 _isLoading.value = false
             }
         }

@@ -54,11 +54,8 @@ class SessionManager(context: Context) {
 
     fun getFromPreference(key: String) = pref.getString(key, "")
 
-    val token: String?
+    private val token: String?
         get() = pref.getString(KEY_TOKEN, null)
-
-    val username: String?
-        get() = pref.getString(KEY_USERNAME, null)
 
     companion object {
         const val KEY_LOGIN = "isLogin"

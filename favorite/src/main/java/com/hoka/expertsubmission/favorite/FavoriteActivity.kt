@@ -3,10 +3,7 @@ package com.hoka.expertsubmission.favorite
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hoka.core.ui.StoryAdapter
 import com.hoka.expertsubmission.detail.DetailActivity

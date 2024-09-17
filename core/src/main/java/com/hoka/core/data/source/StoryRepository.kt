@@ -26,14 +26,14 @@ class StoryRepository(
             }
 
             override fun shouldFetch(data: List<Story>?): Boolean =
-                data == null || data.isEmpty()
+                data.isNullOrEmpty()
 
             override suspend fun createCall(): Flow<ApiResponse<List<ListStoryItem>>> =
                 remoteDataSource.getAllStory()
 
             override suspend fun saveCallResult(data: List<ListStoryItem>) {
-                val StoryList = DataMapper.mapResponsesToEntities(data)
-                localDataSource.insertStory(StoryList)
+                val storyList = DataMapper.mapResponsesToEntities(data)
+                localDataSource.insertStory(storyList)
             }
         }.asFlow()
 

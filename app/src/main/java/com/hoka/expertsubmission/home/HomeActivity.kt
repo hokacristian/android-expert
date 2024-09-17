@@ -95,7 +95,7 @@ class HomeActivity : AppCompatActivity() {
                             startFavoriteActivity()
                         }
                         .addOnFailureListener {
-                            Toast.makeText(this, "Failed to install module", Toast.LENGTH_SHORT)
+                            Toast.makeText(applicationContext, "Failed to install module", Toast.LENGTH_SHORT)
                                 .show()
                         }
                 }
@@ -106,7 +106,7 @@ class HomeActivity : AppCompatActivity() {
                 userRepository.logoutUser()
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
-                Toast.makeText(this, "Berhasil Keluar", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Berhasil Keluar", Toast.LENGTH_SHORT).show()
                 true
             }
 
@@ -120,7 +120,7 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this, activityClass))
         } catch (e: ClassNotFoundException) {
             e.printStackTrace()
-            Toast.makeText(this, "Failed to start activity", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "Failed to start activity", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -131,6 +131,11 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
+        unregisterReceiver(broadcastReceiver)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
         unregisterReceiver(broadcastReceiver)
     }
 
